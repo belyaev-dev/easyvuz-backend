@@ -11,6 +11,7 @@ import { ConfigModule } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import { Module, ValidationError, ValidationPipe } from '@nestjs/common';
 import { ResponseInterceptor } from '@/interceptor/response.interceptor';
+import { PrismaModule } from 'nestjs-prisma';
 
 @Module({
   imports: [
@@ -18,6 +19,8 @@ import { ResponseInterceptor } from '@/interceptor/response.interceptor';
     ConfigModule.forRoot(AppConfig.getInitConifg()),
     // Logger framework that better then NestJS default logger
     LoggerModule.forRoot(AppConfig.getLoggerConfig()),
+    // Prisma ORM module
+    PrismaModule.forRoot({ isGlobal: true }),
   ],
   controllers: [AppController],
   providers: [

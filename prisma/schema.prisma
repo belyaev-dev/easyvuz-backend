@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Student {
+  id                String        @id @default(cuid())
+  phone             String
+  password          String
+  email             String        @unique
+  education_profile String
+  data              String
+  applications      Application[]
+  sms_codes         SmsCode[]
+
+  @@map("students")
+}
+
+model SmsCode {
+  id         String   @id @default(cuid())
+  code       String
+  created_at DateTime @default(now())
+  used       Boolean  @default(false)
+  student    Student? @relation(fields: [student_id], references: [id])
+  student_id String?  @map("student_id")
+
+  @@map("sms_codes")
+}
+
+model University {
+  id          String    @id @default(cuid())
+  photo       String
+  name        String
+  detail      String
+  city        String
+  description String
+  address     String
+  programs    Program[]
+
+  @@map("universities")
+}
+
+model EducationDirection {
+  id       String    @id @default(cuid())
+  name     String
+  programs Program[]
+
+  @@map("education_directions")
+}
+
+model ProgramType {
+  id       String    @id @default(cuid())
+  name     String
+  programs Program[]
+
+  @@map("program_type")
+}
+
+model Program {
+  id            String              @id @default(cuid())
+  name          String
+  photo         String
+  detail        String
+  university_id String
+  university    University          @relation(fields: [university_id], references: [id])
+  direction     EducationDirection? @relation(fields: [direction_id], references: [id])
+  direction_id  String?
+  type          ProgramType?        @relation(fields: [type_id], references: [id])
+  type_id       String?
+
+  @@map("programs")
+}
+
+model Bank {
+  id    String @id @default(cuid())
+  photo String
+  name  String
+  loans Loan[]
+
+  @@map("banks")
+}
+
+model Loan {
+  id           String        @id @default(cuid())
+  precentage   Int
+  detail       String
+  bank_id      String
+  bank         Bank          @relation(fields: [bank_id], references: [id])
+  applications Application[]
+
+  @@map("loans")
+}
+
+model Application {
+  id         String  @id @default(cuid())
+  student_id String
+  loan_id    String
+  status     String
+  student    Student @relation(fields: [student_id], references: [id])
+  loan       Loan    @relation(fields: [loan_id], references: [id])
+
+  @@map("applications")
+}
