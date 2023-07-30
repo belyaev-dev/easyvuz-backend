@@ -31,6 +31,11 @@ export class AppConfig {
           .valid(...validNodeEnvList)
           .required(),
         PORT: Joi.number().min(1).max(65535).required(),
+        DATABASE_URL: Joi.string().required(),
+        SHADOW_DATABASE_URL: Joi.string().optional(),
+        PEZZO_API_KEY: Joi.string().required(),
+        PEZZO_SERVER_URL: Joi.string().required(),
+        OPENAI_API_KEY: Joi.string().required(),
       }),
     };
   }

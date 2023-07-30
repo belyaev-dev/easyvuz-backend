@@ -27,7 +27,7 @@ import { initialize } from './helper';
       .setTitle(npm_package_name)
       .setDescription(npm_package_description)
       .setVersion(npm_package_version)
-      .addServer('http://localhost:3000', 'Localhost')
+      .addServer('https://api.easyvuz.ru', 'Production')
       .build()
   );
 
