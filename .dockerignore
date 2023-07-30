@@ -3,6 +3,7 @@
 
 # Allow files and directories
 !src
+!prisma
 !nest-cli.json
 !package.json
 !pnpm-lock.yaml
