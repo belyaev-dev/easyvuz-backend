@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/fintechsalad/gateway-service/compare/v1.1.6...v1.1.7) (2023-07-30)
+
+
+### Bug Fixes
+
+* add defaultVersion ([65724e6](https://github.com/fintechsalad/gateway-service/commit/65724e60f3d9ec38cdec8a5c93e6f841286d41c4))
+
 ## [1.1.6](https://github.com/fintechsalad/gateway-service/compare/v1.1.5...v1.1.6) (2023-07-30)
 
 
