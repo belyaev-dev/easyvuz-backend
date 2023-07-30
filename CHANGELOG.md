@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/fintechsalad/backend/compare/v1.6.0...v1.7.0) (2023-07-30)
+
+
+### Features
+
+* studentik + cache ([091250e](https://github.com/fintechsalad/backend/commit/091250ec834991d4d7f408d3cf16ae43a21204a8))
+
+
+### Bug Fixes
+
+* imports ([9f43075](https://github.com/fintechsalad/backend/commit/9f430754683dac38503c89da254a8e4a3652bc39))
+
 ## [1.6.0](https://github.com/fintechsalad/backend/compare/v1.5.3...v1.6.0) (2023-07-30)
 
 
