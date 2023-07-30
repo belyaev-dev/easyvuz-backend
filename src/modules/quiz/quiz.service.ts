@@ -30,6 +30,7 @@ export class QuizService {
         ANSWER_8: answers.responses[7].response,
       });
 
+      console.log(data);
       const parsed = JSON.parse(data.result);
       console.log(parsed);
       return parsed;
