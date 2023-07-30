@@ -17,6 +17,7 @@ import { Module, ValidationError, ValidationPipe } from '@nestjs/common';
 import { PrismaModule } from 'nestjs-prisma';
 import { QuizModule } from '../quiz/quiz.module';
 import { ResponseInterceptor } from '@/interceptor/response.interceptor';
+import { StudentikModule } from '../studentik/studentik.module';
 import { UniversitiesModule } from '../universities/universities.module';
 import { UsersModule } from '../users/users.module';
 
@@ -36,6 +37,7 @@ import { UsersModule } from '../users/users.module';
     QuizModule,
     UniversitiesModule,
     UsersModule,
+    StudentikModule,
   ],
   controllers: [AppController],
   providers: [

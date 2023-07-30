@@ -11,6 +11,6 @@ export class StudentikController {
     @Param('id') dialogId: string,
     @Body('message') message: string
   ): Promise<MessageResponseRes> {
-    return this.studentikService.message(message);
+    return this.studentikService.message(dialogId, message);
   }
 }
