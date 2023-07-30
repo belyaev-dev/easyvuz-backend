@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/fintechsalad/backend/compare/v1.7.1...v1.7.2) (2023-07-30)
+
+
+### Bug Fixes
+
+* fixes ([9c57e43](https://github.com/fintechsalad/backend/commit/9c57e43798d54d1d067554b273a3a82e07de37d0))
+
 ## [1.7.1](https://github.com/fintechsalad/backend/compare/v1.7.0...v1.7.1) (2023-07-30)
 
 
