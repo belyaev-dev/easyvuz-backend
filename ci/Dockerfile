@@ -4,7 +4,6 @@ ARG NODE_VERSION=node:18-alpine3.17
 # Base Stage: Upgrade npm and install / upgrade pnpm
 FROM ${NODE_VERSION} AS base
 ARG WORKDIR
-WORKDIR ${WORKDIR}
 LABEL builder=true org.opencontainers.image.authors="Denis Belyaev battler73@yandex.ru"
 RUN npm i -g pnpm
 RUN mkdir -p ${WORKDIR} && chown -R node:node ${WORKDIR}
