@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/fintechsalad/backend/compare/v1.5.3...v1.6.0) (2023-07-30)
+
+
+### Features
+
+* final loan edits ([7174451](https://github.com/fintechsalad/backend/commit/71744517dbf7196a704ad976bf7fb267604307d4))
+
+
+### Bug Fixes
+
+* replace route to leans ([51315e3](https://github.com/fintechsalad/backend/commit/51315e35b48cef3a393a382e099aebdeb0357fef))
+
 ## [1.5.3](https://github.com/fintechsalad/backend/compare/v1.5.2...v1.5.3) (2023-07-30)
 
 
