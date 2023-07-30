@@ -1,7 +1,9 @@
+import { ApiTags } from '@nestjs/swagger';
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('universities')
 export class UniversitiesController {
+  @ApiTags('Внутреннее API: Университеты')
   @Get(UniversitiesController.prototype.getAll.name)
   getAll() {
     return [
@@ -25,9 +27,11 @@ export class UniversitiesController {
     ];
   }
 
+  @ApiTags('Внутреннее API: Университеты')
   @Get(`${UniversitiesController.prototype.getByProgram.name}/:programId`)
   getByProgram(@Param('programId') programId: string) {}
 
+  @ApiTags('OpenAPI: Университеты')
   @Get(UniversitiesController.prototype.updateApplicationStatus.name)
   getApplication(@Param() id: string) {
     return {
@@ -44,6 +48,7 @@ export class UniversitiesController {
     };
   }
 
+  @ApiTags('OpenAPI: Университеты')
   @Post(UniversitiesController.prototype.updateApplicationStatus.name)
   updateApplicationStatus(@Body() data: any) {
     return { status: 'success' };

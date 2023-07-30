@@ -29,7 +29,7 @@
     "start:dev": "nest start --watch",
     "start:prod": "pnpm build && pnpm start",
     "start:repl": "nest start --watch --entryFile ./src/utils/repl",
-    "swagger": "node -r @swc-node/register ./src/utils/swagger",
+    "swagger": "ts-node -r tsconfig-paths/register ./src/utils/swagger",
     "test": "pnpm test:unit && pnpm test:e2e",
     "test:e2e": "jest --config ./test/jest.e2e.config.ts",
     "test:unit": "jest"
@@ -87,6 +87,9 @@
     "ts-jest": "^29.1.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.1.6",
-    "webpack": "5.88.1"
+    "webpack": "5.88.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   }
 }

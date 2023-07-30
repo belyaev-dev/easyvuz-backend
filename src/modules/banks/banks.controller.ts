@@ -1,14 +1,14 @@
+import {
+  ApiBadRequestResponse,
+  ApiOkResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
+import { Body, Controller, Patch, Post } from '@nestjs/common';
 import { NormalException } from '@/exception';
 import { toSwaggerError } from '@/utils/helper';
-import { Body, Controller, Patch, Post } from '@nestjs/common';
-import {
-  ApiTags,
-  ApiOperation,
-  ApiOkResponse,
-  ApiBadRequestResponse,
-} from '@nestjs/swagger';
 
-@ApiTags('API банков')
+@ApiTags('OpenAPI: Банки')
 @Controller('banks')
 export class BanksController {
   @ApiOperation({

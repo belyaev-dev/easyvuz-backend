@@ -7,11 +7,16 @@ import {
 import { AppConfig } from './app.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { BanksModule } from '../banks/banks.module';
 import { ConfigModule } from '@nestjs/config';
+import { LoanModule } from '../loan/loan.module';
 import { LoggerModule } from 'nestjs-pino';
 import { Module, ValidationError, ValidationPipe } from '@nestjs/common';
-import { ResponseInterceptor } from '@/interceptor/response.interceptor';
 import { PrismaModule } from 'nestjs-prisma';
+import { QuizModule } from '../quiz/quiz.module';
+import { ResponseInterceptor } from '@/interceptor/response.interceptor';
+import { UniversitiesModule } from '../universities/universities.module';
+import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [
@@ -21,6 +26,12 @@ import { PrismaModule } from 'nestjs-prisma';
     LoggerModule.forRoot(AppConfig.getLoggerConfig()),
     // Prisma ORM module
     PrismaModule.forRoot({ isGlobal: true }),
+
+    BanksModule,
+    LoanModule,
+    QuizModule,
+    UniversitiesModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [
