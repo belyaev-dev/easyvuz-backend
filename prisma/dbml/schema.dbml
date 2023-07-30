@@ -1,0 +1,156 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table students {
+  id String [pk]
+  phone String [not null]
+  password String [not null]
+  email String [unique, not null]
+  education_profile String [not null]
+  data String [not null]
+  applications applications [not null]
+  sms_codes sms_codes [not null]
+  tests Test [not null]
+}
+
+Table sms_codes {
+  id String [pk]
+  code String [not null]
+  created_at DateTime [default: `now()`, not null]
+  used Boolean [not null, default: false]
+  student students
+  student_id String
+}
+
+Table universities {
+  id String [pk]
+  photo String [not null]
+  name String [not null]
+  detail String [not null]
+  city String [not null]
+  description String [not null]
+  address String [not null]
+  programs programs [not null]
+  Application applications [not null]
+}
+
+Table Test {
+  id String [pk]
+  student students
+  student_id String
+  status TestStatus [not null, default: 'IN_PROCESS']
+  result Json
+}
+
+Table education_directions {
+  id String [pk]
+  name String [not null]
+  type String [not null]
+  programs programs [not null]
+}
+
+Table program_type {
+  id String [pk]
+  name String [not null]
+  code String [not null]
+  programs programs [not null]
+}
+
+Table programs {
+  id String [pk]
+  name String [not null]
+  code String [not null]
+  is_commercial Boolean [not null]
+  cost Int
+  period Int [not null]
+  photo String [not null]
+  detail String [not null]
+  university_id String [not null]
+  university universities [not null]
+  direction education_directions
+  direction_id String
+  type program_type
+  type_id String
+  Application applications [not null]
+}
+
+Table banks {
+  id String [pk]
+  photo String [not null]
+  name String [not null]
+  loans loans [not null]
+}
+
+Table loans {
+  id String [pk]
+  status LoanStatus [not null, default: 'DRAFT']
+  precentage Int [not null, default: 3]
+  amount Int [not null]
+  payment Int [not null]
+  period Int [not null]
+  detail String [not null]
+  bank_id String [not null]
+  application_id String [not null]
+  bank banks [not null]
+  application applications [not null]
+}
+
+Table applications {
+  id String [pk]
+  status ApplicationStatus [not null, default: 'DRAFT']
+  type ApplicationType [not null, default: 'DEFAULT']
+  student_id String [not null]
+  university_id String [not null]
+  program_id String [not null]
+  program programs [not null]
+  university universities [not null]
+  student students [not null]
+  loan loans [not null]
+}
+
+Enum LoanStatus {
+  DRAFT
+  SENT
+  ACCEPTED
+  REJECTED
+}
+
+Enum ApplicationStatus {
+  DRAFT
+  SENT
+  REVIEWED
+  PAYED
+  FINISHED
+}
+
+Enum ApplicationType {
+  CREDIT
+  DEFAULT
+}
+
+Enum TestStatus {
+  IN_PROCESS
+  ERROR
+  SUCCESS
+}
+
+Ref: sms_codes.student_id > students.id
+
+Ref: Test.student_id > students.id
+
+Ref: programs.university_id > universities.id
+
+Ref: programs.direction_id > education_directions.id
+
+Ref: programs.type_id > program_type.id
+
+Ref: loans.bank_id > banks.id
+
+Ref: loans.application_id > applications.id
+
+Ref: applications.program_id > programs.id
+
+Ref: applications.university_id > universities.id
+
+Ref: applications.student_id > students.id

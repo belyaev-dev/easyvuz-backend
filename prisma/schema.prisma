@@ -11,6 +11,10 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
 model Student {
   id                String        @id @default(cuid())
   phone             String
@@ -37,7 +41,7 @@ model SmsCode {
 }
 
 model University {
-  id          String    @id @default(cuid())
+  id          String        @id @default(cuid())
   photo       String
   name        String
   detail      String
@@ -45,6 +49,7 @@ model University {
   description String
   address     String
   programs    Program[]
+  Application Application[]
 
   @@map("universities")
 }
@@ -90,6 +95,7 @@ model Program {
   direction_id  String?
   type          ProgramType?        @relation(fields: [type_id], references: [id])
   type_id       String?
+  Application   Application[]
 
   @@map("programs")
 }
@@ -121,13 +127,17 @@ model Loan {
 }
 
 model Application {
-  id         String            @id @default(cuid())
-  status     ApplicationStatus @default(DRAFT)
-  type       ApplicationType   @default(DEFAULT)
-  student_id String
+  id            String            @id @default(cuid())
+  status        ApplicationStatus @default(DRAFT)
+  type          ApplicationType   @default(DEFAULT)
+  student_id    String
+  university_id String
+  program_id    String
 
-  student Student @relation(fields: [student_id], references: [id])
-  loan    Loan[]
+  program    Program    @relation(fields: [program_id], references: [id])
+  university University @relation(fields: [university_id], references: [id])
+  student    Student    @relation(fields: [student_id], references: [id])
+  loan       Loan[]
 
   @@map("applications")
 }

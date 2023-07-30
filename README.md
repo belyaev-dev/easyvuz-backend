@@ -1,5 +1,9 @@
 # EasyVUZ.ru Backend
 
+## ERD
+
+[![DBML](prisma/dbml/schema.png)](https://dbdiagram.io/embed/64c6114d02bd1c4a5eec1524)
+
 ## 📓 Команды
 
 ### Список команд
