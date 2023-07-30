@@ -28,11 +28,31 @@ export class StudentikService {
   ): Promise<MessageResponseRes> {
     try {
       let context = await this.cacheManager.get(`studentik-${dialogId}`);
+      // let messages =
+      //   (await this.cacheManager.get) <
+      //   Record<string, any>(`studentik-msgs-${dialogId}`);
       if (!context) context = null;
+
       const data = await this.openai.run('StudentikHelper', {
         Context: context,
         UserMessage: message,
       });
+      // if (!messages)
+      //   messages = [
+      //     {
+      //       text: 'Привет! Я Студентик, твой помощник по выбору карьеры и университета. Я помогу тебе выбрать будущую профессию, подобрать учебное заведение и способ финансирования. Также расскажу о преимуществах профессии и средней зарплате в России. Чем я могу тебе помочь?',
+      //       sender: 'ai',
+      //       buttons: [
+      //         'Выбор профессии',
+      //         'Выбор университета',
+      //         'Финансирование обучения',
+      //       ],
+      //     },
+      //     {
+      //       text: message,
+      //       sender: 'user',
+      //     },
+      //   ];
 
       const parsed = JSON.parse(data.result);
       await this.cacheManager.set(`studentik-${dialogId}`, parsed.context);
