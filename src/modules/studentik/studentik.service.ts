@@ -27,8 +27,8 @@ export class StudentikService {
     message: string
   ): Promise<MessageResponseRes> {
     try {
-      const context =
-        (await this.cacheManager.get(`studentik-${dialogId}`)) || '';
+      let context = await this.cacheManager.get(`studentik-${dialogId}`);
+      if (!context) context = null;
       const data = await this.openai.run('StudentikHelper', {
         Context: context,
         UserMessage: message,
