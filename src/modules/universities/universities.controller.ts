@@ -1,35 +1,20 @@
 import { ApiTags } from '@nestjs/swagger';
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { UniversitiesService } from './universities.service';
 
 @Controller('universities')
 export class UniversitiesController {
+  constructor(readonly universities: UniversitiesService) {}
+
   @ApiTags('Внутреннее API: Университеты')
   @Get(UniversitiesController.prototype.getAll.name)
   getAll() {
-    return [
-      {
-        photo: 'https://cdn2.postupi.online/images/images335x232/94/875.jpg',
-        name: 'Институт международных экономических связей',
-        detail: '',
-        city: 'Москва',
-        description:
-          'Институт международных экономических связей (ИМЭС) был основан в 1995 г. и готовит высококлассных специалистов в области экономики, менеджмента, государственного и муниципального управления, психологии и юриспруденции.',
-        address: 'г. Москва, ул. Мосфильмовская, д. 35',
-      },
-      {
-        photo: 'https://cdn2.postupi.online/images/images335x232/94/875.jpg',
-        name: 'МГУ',
-        detail: '',
-        city: 'Москва',
-        description: 'Длинное и очень красивое описание второго уника.',
-        address: 'г. Москва, ул. НеМосфильмовская, д. 35',
-      },
-    ];
+    return this.universities.getAll();
   }
 
-  @ApiTags('Внутреннее API: Университеты')
-  @Get(`${UniversitiesController.prototype.getByProgram.name}/:programId`)
-  getByProgram(@Param('programId') programId: string) {}
+  // @ApiTags('Внутреннее API: Университеты')
+  // @Get(`${UniversitiesController.prototype.getByProgram.name}/:programId`)
+  // getByProgram(@Param('programId') programId: string) {}
 
   @ApiTags('OpenAPI: Университеты')
   @Get(UniversitiesController.prototype.updateApplicationStatus.name)
