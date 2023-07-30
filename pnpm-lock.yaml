@@ -20,6 +20,12 @@ dependencies:
   '@nestjs/swagger':
     specifier: ^7.1.1
     version: 7.1.1(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
+  '@pezzo/client':
+    specifier: ^0.2.3
+    version: 0.2.3
+  '@pezzo/integrations':
+    specifier: ^0.1.11
+    version: 0.1.11
   '@prisma/client':
     specifier: ^5.0.0
     version: 5.0.0(prisma@5.0.0)
@@ -67,6 +73,9 @@ devDependencies:
   '@commitlint/types':
     specifier: ^17.4.4
     version: 17.4.4
+  '@faker-js/faker':
+    specifier: ^8.0.2
+    version: 8.0.2
   '@nestjs/cli':
     specifier: ^10.1.8
     version: 10.1.8(@swc/cli@0.1.62)(@swc/core@1.3.69)
@@ -840,6 +849,11 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@faker-js/faker@8.0.2:
+    resolution: {integrity: sha512-Uo3pGspElQW91PCvKSIAXoEgAUlRnH29sX2/p89kg7sP1m2PzCufHINd0FhTXQf6DYGiUlVncdSPa2F9wxed2A==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: true
+
   /@fastify/ajv-compiler@3.5.0:
     resolution: {integrity: sha512-ebbEtlI7dxXF5ziNdr05mOY8NnDiPB1XvAlLHctRt/Rc+C3LCOVW5imUVX+mhvUhnNzmPBHewUkOFgGlCxgdAA==}
     dependencies:
@@ -1474,6 +1488,26 @@ packages:
       node-fetch: 2.6.12
     transitivePeerDependencies:
       - encoding
+
+  /@pezzo/client@0.2.3:
+    resolution: {integrity: sha512-cmxBXm++H8aZbcpPQpV7stbl3jZTQ7XIT2/HnPJgG+c1V7MCQCNr610eGVJbb2SNo7wr0SAn6QAZl9bEeW6PrA==}
+    dependencies:
+      axios: 1.4.0
+      tslib: 2.6.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /@pezzo/integrations@0.1.11:
+    resolution: {integrity: sha512-u9Xp6J4Kbc4QAtg61kub5PfkFwDMDj1H0DEYi5IUUQ9qhMfSxCx/ydGAwEE1LTIsUKkFU2cd4XKqHV34BDckng==}
+    deprecated: Deprecated as of Pezzo v0.4.0. Use the @pezzo/client package exclusively. Check the release notes to view the full migration guide.
+    dependencies:
+      axios: 1.4.0
+      openai: 3.3.0
+      tslib: 2.6.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -2441,6 +2475,14 @@ packages:
       fastq: 1.15.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /axios@0.26.1:
+    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /axios@1.4.0:
@@ -5841,6 +5883,15 @@ packages:
       is-inside-container: 1.0.0
       is-wsl: 2.2.0
     dev: true
+
+  /openai@3.3.0:
+    resolution: {integrity: sha512-uqxI/Au+aPRnsaQRe8CojU0eCR7I0mBiKjD3sNMzY6DaC1ZVrc85u98mtJW6voDug8fgGN+DIZmTDxTthxb7dQ==}
+    dependencies:
+      axios: 0.26.1
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}

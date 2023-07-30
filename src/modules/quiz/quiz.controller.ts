@@ -6,12 +6,15 @@ import {
 } from '@nestjs/swagger';
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { NormalException } from '@/exception';
+import { QuizService } from './quiz.service';
 import { toSwaggerError } from '@/utils/helper';
 
 @ApiTags('Внутреннее API: Тесты')
 @Controller()
 export class QuizController {
   readonly logger = new Logger(QuizController.name);
+
+  constructor(readonly quizService: QuizService) {}
 
   @ApiOperation({
     description: 'Отправить заполненный тест',
@@ -23,11 +26,10 @@ export class QuizController {
   })
   @ApiBadRequestResponse(toSwaggerError(NormalException.UNEXPECTED()))
   @Post(QuizController.prototype.sendQuiz.name)
-  sendQuiz(@Body() data: any) {
+  async sendQuiz(@Body() data: any) {
     this.logger.log(data);
-    return {
-      status: 'SUCCESS',
-    };
+    const result = await this.quizService.generateAnswer(data);
+    return result;
   }
 
   @ApiOperation({
