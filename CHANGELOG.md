@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/fintechsalad/gateway-service/compare/v1.1.0...v1.1.1) (2023-07-30)
+
+
+### Bug Fixes
+
+* correct build-docker workflow ([1134c5f](https://github.com/fintechsalad/gateway-service/commit/1134c5f986548af5a1a413ad3b539fbecabfcca5))
+
 ## [1.1.0](https://github.com/fintechsalad/gateway-service/compare/v1.0.0...v1.1.0) (2023-07-30)
 
 
