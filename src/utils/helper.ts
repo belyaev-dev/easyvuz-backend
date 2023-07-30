@@ -25,7 +25,7 @@ export const initialize = (app: INestApplication) => {
 
   app.useLogger(app.get(Logger));
 
-  app.enableVersioning({ type: VersioningType.URI });
+  app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
 
   // For Swagger UI
   if (NODE_ENV === NodeEnv.DEVELOPMENT) app.enableCors();
