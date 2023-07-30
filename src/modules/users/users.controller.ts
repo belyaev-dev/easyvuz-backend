@@ -1,11 +1,11 @@
-import { NormalException } from '@/exception';
-import { toSwaggerError } from '@/utils/helper';
-import { Controller, Get } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
   ApiOkResponse,
   ApiOperation,
 } from '@nestjs/swagger';
+import { Controller, Get } from '@nestjs/common';
+import { NormalException } from '@/exception';
+import { toSwaggerError } from '@/utils/helper';
 
 @Controller('users')
 export class UsersController {
