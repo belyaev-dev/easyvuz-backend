@@ -1,6 +1,6 @@
 {
   "name": "gateway-service",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Gateway API for Postupawka.ru",
   "author": "Denis Belyaev",
   "license": "UNLICENSED",
