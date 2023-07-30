@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/fintechsalad/backend/compare/v1.5.2...v1.5.3) (2023-07-30)
+
+
+### Bug Fixes
+
+* incorrect environment variables naming ([a0d8dcf](https://github.com/fintechsalad/backend/commit/a0d8dcf355f410d4fe5fb95ff6e55959dad88b47))
+
 ## [1.5.2](https://github.com/fintechsalad/backend/compare/v1.5.1...v1.5.2) (2023-07-30)
 
 
