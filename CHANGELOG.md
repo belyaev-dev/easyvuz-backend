@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/fintechsalad/gateway-service/compare/v1.1.8...v1.2.0) (2023-07-30)
+
+
+### Features
+
+* add pezzo support ([6d78800](https://github.com/fintechsalad/gateway-service/commit/6d788004a56541b0a979a1f7cf704e19811916bf))
+
+
+### Bug Fixes
+
+* quiz ([d9ef384](https://github.com/fintechsalad/gateway-service/commit/d9ef3843778e57708d1b017af4e86db7c8c9a75f))
+* tests ([4e92268](https://github.com/fintechsalad/gateway-service/commit/4e92268d36932b8b590876115c22fb2a70195d2b))
+
 ## [1.1.8](https://github.com/fintechsalad/gateway-service/compare/v1.1.7...v1.1.8) (2023-07-30)
 
 
