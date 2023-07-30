@@ -16,6 +16,9 @@ WORKDIR ${WORKDIR}
 COPY --chown=node:node package.json pnpm-lock.yaml ./
 # Skip pnpm checking + Husky init
 RUN pnpm install --ignore-scripts --frozen-lockfile
+# Copy Prisma schema file and generate Prisma client
+COPY --chown=node:node prisma/schema.prisma ./prisma/
+RUN npx prisma generate
 
 # Builder Stage: Copy node_modules from dependencies and build it
 FROM installer as builder
