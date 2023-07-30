@@ -10,7 +10,7 @@ import { NormalException } from '@/exception';
 import { toSwaggerError } from '@/utils/helper';
 
 @ApiTags('Внутреннее API: Заявка на коммерцию')
-@Controller('loan')
+@Controller('loans')
 export class LoanController {
   readonly logger = new Logger(LoanController.name);
 
