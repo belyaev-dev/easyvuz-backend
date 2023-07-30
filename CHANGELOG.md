@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/fintechsalad/gateway-service/compare/v1.0.0...v1.1.0) (2023-07-30)
+
+
+### Features
+
+* updated schema and implemented routes ([da5f01b](https://github.com/fintechsalad/gateway-service/commit/da5f01bbf5fd33058b7de0a99b60384aa32b32ab))
+
 ## 1.0.0 (2023-07-29)
 
 
