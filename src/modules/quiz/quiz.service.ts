@@ -20,14 +20,14 @@ export class QuizService {
   async generateAnswer(answers: any) {
     try {
       const data = await this.openai.run('ProgramTypeSelector', {
-        ANSWER_1: answers.responses[1].response,
-        ANSWER_2: answers.responses[2].response,
-        ANSWER_3: answers.responses[3].response,
-        ANSWER_4: answers.responses[4].response,
-        ANSWER_5: answers.responses[5].response,
-        ANSWER_6: answers.responses[6].response,
-        ANSWER_7: answers.responses[7].response,
-        ANSWER_8: answers.responses[8].response,
+        ANSWER_1: answers.responses[0].response,
+        ANSWER_2: answers.responses[1].response,
+        ANSWER_3: answers.responses[2].response,
+        ANSWER_4: answers.responses[3].response,
+        ANSWER_5: answers.responses[4].response,
+        ANSWER_6: answers.responses[5].response,
+        ANSWER_7: answers.responses[6].response,
+        ANSWER_8: answers.responses[7].response,
       });
 
       const parsed = JSON.parse(data.result);
