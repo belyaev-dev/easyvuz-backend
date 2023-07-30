@@ -1,3 +1,10 @@
+import {
+  AdditionalForm,
+  AmountForm,
+  ContactsForm,
+  JobForm,
+  PassportForm,
+} from '../../loan.types';
 import { ApiResponseProperty } from '@nestjs/swagger';
 
 export class PreviousFormRes {

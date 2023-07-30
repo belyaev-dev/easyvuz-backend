@@ -5,6 +5,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { Body, Controller, Patch, Post } from '@nestjs/common';
+import { CreateLoanOfferDto, UpdateStatusDto } from './dto';
 import { NormalException } from '@/exception';
 import { toSwaggerError } from '@/utils/helper';
 
@@ -21,7 +22,8 @@ export class BanksController {
   })
   @ApiBadRequestResponse(toSwaggerError(NormalException.UNEXPECTED()))
   @Post(BanksController.prototype.offerLoan.name)
-  async offerLoan(@Body() data: any): Promise<any> {
+  async offerLoan(@Body() data: CreateLoanOfferDto): Promise<any> {
+    console.log(data);
     return {
       status: 'success',
     };
@@ -37,7 +39,8 @@ export class BanksController {
   })
   @ApiBadRequestResponse(toSwaggerError(NormalException.UNEXPECTED()))
   @Patch(BanksController.prototype.updateApplicationStatus.name)
-  async updateApplicationStatus(@Body() data: any) {
+  async updateApplicationStatus(@Body() data: UpdateStatusDto) {
+    console.log(data);
     return {
       status: 'success',
     };

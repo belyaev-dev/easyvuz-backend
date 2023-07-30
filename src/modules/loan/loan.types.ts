@@ -1,4 +1,4 @@
-interface AmountForm {
+export interface AmountForm {
   payment: number;
   period: number;
   periodUnit: number;
@@ -9,7 +9,7 @@ interface AmountForm {
   propertyType: number;
 }
 
-interface ContactsForm {
+export interface ContactsForm {
   name: string;
   surname: string;
   patronymic: string;
@@ -21,7 +21,7 @@ interface ContactsForm {
   visitDate: string;
 }
 
-interface PassportForm {
+export interface PassportForm {
   gender: number;
   departmentCode: string;
   serial: string;
@@ -36,7 +36,7 @@ interface PassportForm {
   addressLivingDate: string;
 }
 
-interface JobForm {
+export interface JobForm {
   jobType: string;
   enterpriseActivityType: string;
   jobDateStart: string;
@@ -51,7 +51,7 @@ interface JobForm {
   OKVEDCode: string;
 }
 
-interface AdditionalForm {
+export interface AdditionalForm {
   education: string;
   maritalCode: string;
   childrenCount: string;
