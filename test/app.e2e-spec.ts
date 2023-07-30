@@ -24,7 +24,7 @@ describe('AppModule', () => {
     await app.getHttpAdapter().getInstance().ready();
   });
 
-  des({ url: '/version' }, async (config) => {
+  des({ url: '/v1/version' }, async (config) => {
     it('should return version number with 200 status code', async () => {
       const expectedResult: VersionRes = {
         version: process.env.npm_package_version,
@@ -37,7 +37,7 @@ describe('AppModule', () => {
     });
   });
 
-  des({ url: '/healthz' }, async (config) => {
+  des({ url: '/v1/healthz' }, async (config) => {
     it('should return health status with 200 status code', async () => {
       const expectedResult = 'OK';
       const response = await app.inject(config);
