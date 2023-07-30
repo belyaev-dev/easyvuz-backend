@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0](https://github.com/fintechsalad/gateway-service/compare/v1.4.0...v1.5.0) (2023-07-30)
+
+
+### Features
+
+* correct env vars ([85aa717](https://github.com/fintechsalad/gateway-service/commit/85aa71731e4b86b0bed895ee6d358304a8b70b60))
+* display database schema ([eb2a580](https://github.com/fintechsalad/gateway-service/commit/eb2a580dc2bed33cb13b51db43f62ffd261bf727))
+* loan typings ([0f56596](https://github.com/fintechsalad/gateway-service/commit/0f565966433cef0e044ad4344a6eeed9505c93d9))
+* make application link to university ([42fcee1](https://github.com/fintechsalad/gateway-service/commit/42fcee1433fc6139e1ca8a8425144e49d4e1cb5c))
+
 ## [1.4.0](https://github.com/fintechsalad/gateway-service/compare/v1.3.0...v1.4.0) (2023-07-30)
 
 
