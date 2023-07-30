@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/fintechsalad/gateway-service/compare/v1.1.2...v1.1.3) (2023-07-30)
+
+
+### Bug Fixes
+
+* Update Dockerfile ([fa462c6](https://github.com/fintechsalad/gateway-service/commit/fa462c686233050b96b5760b3e84156e16366774))
+
 ## [1.1.2](https://github.com/fintechsalad/gateway-service/compare/v1.1.1...v1.1.2) (2023-07-30)
 
 
