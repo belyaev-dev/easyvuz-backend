@@ -1,4 +1,4 @@
-# EasyVUZ.ru Gateway Service
+# EasyVUZ.ru Backend
 
 ## 📓 Команды
 
