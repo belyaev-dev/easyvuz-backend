@@ -39,3 +39,8 @@ jobs:
         env:
           CLUSTERING: false
           PORT: 3000
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SHADOW_DATABASE_URL: ${{ secrets.SHADOW_DATABASE_URL }}
+          OPENAI_API_TOKEN: ${{ secrets.OPENAI_API_TOKEN }}
+          PEZZO_API_TOKEN: ${{ secrets.PEZZO_API_TOKEN }}
+          PEZZO_SERVER_URL: ${{ secrets.PEZZO_SERVER_URL }}
