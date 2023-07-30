@@ -20,6 +20,7 @@ model Student {
   data              String
   applications      Application[]
   sms_codes         SmsCode[]
+  tests             Test[]
 
   @@map("students")
 }
@@ -48,9 +49,18 @@ model University {
   @@map("universities")
 }
 
+model Test {
+  id         String     @id @default(cuid())
+  student    Student?   @relation(fields: [student_id], references: [id])
+  student_id String?    @map("student_id")
+  status     TestStatus @default(IN_PROCESS)
+  result     Json?
+}
+
 model EducationDirection {
   id       String    @id @default(cuid())
   name     String
+  type     String
   programs Program[]
 
   @@map("education_directions")
@@ -59,6 +69,7 @@ model EducationDirection {
 model ProgramType {
   id       String    @id @default(cuid())
   name     String
+  code     String
   programs Program[]
 
   @@map("program_type")
@@ -67,6 +78,10 @@ model ProgramType {
 model Program {
   id            String              @id @default(cuid())
   name          String
+  code          String
+  is_commercial Boolean
+  cost          Int?
+  period        Int
   photo         String
   detail        String
   university_id String
@@ -89,23 +104,56 @@ model Bank {
 }
 
 model Loan {
-  id           String        @id @default(cuid())
-  precentage   Int
-  detail       String
-  bank_id      String
-  bank         Bank          @relation(fields: [bank_id], references: [id])
-  applications Application[]
+  id             String     @id @default(cuid())
+  status         LoanStatus @default(DRAFT)
+  precentage     Int        @default(3)
+  amount         Int
+  payment        Int
+  period         Int
+  detail         String
+  bank_id        String
+  application_id String
+
+  bank        Bank        @relation(fields: [bank_id], references: [id])
+  application Application @relation(fields: [application_id], references: [id])
 
   @@map("loans")
 }
 
 model Application {
-  id         String  @id @default(cuid())
+  id         String            @id @default(cuid())
+  status     ApplicationStatus @default(DRAFT)
+  type       ApplicationType   @default(DEFAULT)
   student_id String
-  loan_id    String
-  status     String
-  student    Student @relation(fields: [student_id], references: [id])
-  loan       Loan    @relation(fields: [loan_id], references: [id])
+
+  student Student @relation(fields: [student_id], references: [id])
+  loan    Loan[]
 
   @@map("applications")
+}
+
+enum LoanStatus {
+  DRAFT
+  SENT
+  ACCEPTED
+  REJECTED
+}
+
+enum ApplicationStatus {
+  DRAFT
+  SENT
+  REVIEWED
+  PAYED
+  FINISHED
+}
+
+enum ApplicationType {
+  CREDIT
+  DEFAULT
+}
+
+enum TestStatus {
+  IN_PROCESS
+  ERROR
+  SUCCESS
 }
