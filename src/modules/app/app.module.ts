@@ -8,6 +8,8 @@ import { AppConfig } from './app.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BanksModule } from '../banks/banks.module';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { CacheModule } from '@nestjs/cache-manager';
 import { ConfigModule } from '@nestjs/config';
 import { LoanModule } from '../loan/loan.module';
 import { LoggerModule } from 'nestjs-pino';
@@ -26,6 +28,8 @@ import { UsersModule } from '../users/users.module';
     LoggerModule.forRoot(AppConfig.getLoggerConfig()),
     // Prisma ORM module
     PrismaModule.forRoot({ isGlobal: true }),
+    // Cache
+    CacheModule.register({ isGlobal: true }),
 
     BanksModule,
     LoanModule,
