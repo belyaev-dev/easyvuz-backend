@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/fintechsalad/gateway-service/compare/v1.3.0...v1.4.0) (2023-07-30)
+
+
+### Features
+
+* getAll route in universities ([c7c85e1](https://github.com/fintechsalad/gateway-service/commit/c7c85e142afc356710f9866271e3e4909f4b86a8))
+* new seed with almost real data :) ([2bc1f3a](https://github.com/fintechsalad/gateway-service/commit/2bc1f3a28179830c7f02c96ac0598c24a7849d8d))
+
 ## [1.3.0](https://github.com/fintechsalad/gateway-service/compare/v1.2.1...v1.3.0) (2023-07-30)
 
 
