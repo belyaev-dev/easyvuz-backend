@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.5](https://github.com/fintechsalad/gateway-service/compare/v1.1.4...v1.1.5) (2023-07-30)
+
+
+### Bug Fixes
+
+* allow all origins & correct swagger script ([b3a4fce](https://github.com/fintechsalad/gateway-service/commit/b3a4fced72879974f7682596b33e7b6b0e42cd43))
+* eslint ([c766952](https://github.com/fintechsalad/gateway-service/commit/c76695236ea242da1ad51e786fb393f60daa8bf6))
+
 ## [1.1.4](https://github.com/fintechsalad/gateway-service/compare/v1.1.3...v1.1.4) (2023-07-30)
 
 
