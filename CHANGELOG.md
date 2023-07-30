@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/fintechsalad/backend/compare/v1.5.0...v1.5.1) (2023-07-30)
+
+
+### Bug Fixes
+
+* workflow correct secrets ([dcd817a](https://github.com/fintechsalad/backend/commit/dcd817a9cf58e09f96e33ef10d8462cdbc332916))
+
 ## [1.5.0](https://github.com/fintechsalad/gateway-service/compare/v1.4.0...v1.5.0) (2023-07-30)
 
 
