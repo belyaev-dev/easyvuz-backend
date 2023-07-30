@@ -1,5 +1,5 @@
 import { ApiResponseOptions } from '@nestjs/swagger';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, VersioningType } from '@nestjs/common';
 import { Logger } from 'nestjs-pino';
 import { NodeEnv } from '@share/enums';
 import { NormalException } from '@/exception';
@@ -25,7 +25,7 @@ export const initialize = (app: INestApplication) => {
 
   app.useLogger(app.get(Logger));
 
-  app.enableVersioning();
+  app.enableVersioning({ type: VersioningType.URI });
 
   // For Swagger UI
   if (NODE_ENV === NodeEnv.DEVELOPMENT) app.enableCors();
