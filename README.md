@@ -1,4 +1,27 @@
-# EasyVUZ.ru Backend
+# EasyVUZ.ru Hackathon Backend <a href="https://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" height="28px" alt="Nest Logo"/></a>
+
+Backend приложения EasyVuz.ru для использования на хакатоне Финтех 2023 г.
+
+Кейс: **Веб-сервис, который облегчит взаимодействие банков, учебных заведений и абитуриентов**
+
+Привет Аквариум!
+
+## Вклад ✨
+
+Проект стал возможен благодаря этим замечательным людям
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/belyaev-dev"><img src="https://avatars.githubusercontent.com/u/74226935?v=4?s=100" width="100px" alt=""/><br /><sub><b>Денис Беляев</b></sub></a><br /><a href="https://github.com/belyaev-dev/hackaton-backend/commits?author=belyaev-dev" title="Код">💻</a> <a href="https://github.com/belyaev-dev/hackaton-backend/commits?author=belyaev-dev" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Svogg"><img src="https://avatars.githubusercontent.com/u/45901434?s=100&v=4" width="100px" height="100px" alt=""/><br /><sub><b>Олег</b></sub></a><br /><a href="https://github.com/belyaev-dev/easyvuz-backend/commits?author=Svogg" title="Код">💻</a></td>
+    <td align="center"><a href="https://github.com/distanceOn"><img src="https://avatars.githubusercontent.com/u/104509081?s=100&v=4" width="100px" alt=""/><br /><sub><b>Роман</b></sub></a><br /><a href="https://github.com/fintechsalad/frontend/commits?author=distanceOn" title="Код">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 ## ERD
 
